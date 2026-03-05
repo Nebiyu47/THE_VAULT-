@@ -17,12 +17,21 @@ import java.util.UUID;
 public class LobbyPlayer implements Serializable {
 
     private UUID playerId;
+
     private String username;
+
     private String avatarUrl;
+
     private PlayerRole role;
+
     private boolean isReady;
+
     private LocalDateTime joinedAt;
-    private String connectionId;
+
+    private String connectionId; // WebSocket session ID
+
     private boolean isOnline;
+
+    private PlayerStats stats;
 
 }
