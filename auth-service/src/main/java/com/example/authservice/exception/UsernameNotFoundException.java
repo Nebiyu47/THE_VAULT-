@@ -1,2 +1,4 @@
-package com.example.authservice.exception;public class UsernameNotFoundException {
+package com.example.authservice.exception;
+
+public class UsernameNotFoundException {
 }
