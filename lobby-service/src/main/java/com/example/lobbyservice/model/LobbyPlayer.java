@@ -1,10 +1,11 @@
 package com.example.lobbyservice.model;
-
+import org.springframework.data.annotation.Id;
 import com.example.lobbyservice.enums.PlayerRole;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.redis.core.RedisHash;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -14,8 +15,9 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@RedisHash("players")
 public class LobbyPlayer implements Serializable {
-
+    @Id
     private UUID playerId;
 
     private String username;

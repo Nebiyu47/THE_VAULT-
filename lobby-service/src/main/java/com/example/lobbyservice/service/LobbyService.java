@@ -8,14 +8,17 @@ import com.example.lobbyservice.model.GameConfig;
 import com.example.lobbyservice.model.GameRoom;
 import com.example.lobbyservice.model.LobbyPlayer;
 import com.example.lobbyservice.model.LobbyState;
-import com.example.lobbyservice.repository.LobbyStateRepository;
-import com.example.lobbyservice.repository.PlayerRepository;
-import com.example.lobbyservice.repository.RoomRepository;
+
+import com.example.lobbyservice.repository.mongodb.LobbyStateRepository;
+import com.example.lobbyservice.repository.mongodb.RoomRepository;
+import com.example.lobbyservice.repository.redis.PlayerRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -40,7 +43,7 @@ public class LobbyService {
     private final RedisTemplate<String, Object> redisTemplate;
     private final SimpMessagingTemplate messagingTemplate;
     private final ObjectMapper objectMapper;
-    private final MatchmakingService matchmakingService;
+    private  MatchmakingService matchmakingService;
 
     @Value("${lobby.room.code-length:6}")
     private int roomCodeLength;
@@ -50,6 +53,10 @@ public class LobbyService {
 
     @Value("${lobby.room.idle-timeout:300}")
     private int idleTimeout;
+    @Autowired
+    public void setMatchmakingService(@Lazy MatchmakingService matchmakingService) {
+        this.matchmakingService = matchmakingService;
+    }
 
     @Transactional
     public RoomResponse createRoom(CreateRoomRequest request) {

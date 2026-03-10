@@ -3,8 +3,8 @@ package com.example.lobbyservice.service;
 import com.example.lobbyservice.enums.PlayerRole;
 import com.example.lobbyservice.enums.RoomStatus;
 import com.example.lobbyservice.model.GameRoom;
-import com.example.lobbyservice.model.LobbyPlayer;
-import com.example.lobbyservice.repository.RoomRepository;
+
+import com.example.lobbyservice.repository.mongodb.RoomRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;

@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @Configuration
 @EnableMongoAuditing
-@EnableMongoRepositories(basePackages = "com.example.lobbyservice.repository")
+@EnableMongoRepositories(basePackages = "com.example.lobbyservice.repository.mongodb")
 public class MongoDBConfig {
 
 }

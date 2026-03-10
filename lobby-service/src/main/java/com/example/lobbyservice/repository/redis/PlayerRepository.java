@@ -1,4 +1,4 @@
-package com.example.lobbyservice.repository;
+package com.example.lobbyservice.repository.redis;
 
 import com.example.lobbyservice.model.LobbyPlayer;
 import org.springframework.data.repository.CrudRepository;

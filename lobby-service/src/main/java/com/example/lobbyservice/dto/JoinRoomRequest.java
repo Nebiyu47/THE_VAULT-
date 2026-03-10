@@ -21,4 +21,5 @@ public class JoinRoomRequest {
     private UUID playerId;
     private String username;
     private String avatarUrl;
+    private String connectionId;
 }

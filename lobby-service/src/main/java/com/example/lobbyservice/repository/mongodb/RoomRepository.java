@@ -1,5 +1,4 @@
-package com.example.lobbyservice.repository;
-
+package com.example.lobbyservice.repository.mongodb;
 import com.example.lobbyservice.enums.RoomStatus;
 import com.example.lobbyservice.model.GameRoom;
 import org.springframework.data.mongodb.repository.MongoRepository;

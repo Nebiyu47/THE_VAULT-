@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableMongoRepositories
+
 @EnableScheduling
 public class LobbyServiceApplication {
 
