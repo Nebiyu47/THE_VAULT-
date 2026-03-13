@@ -10,6 +10,7 @@
         <module name="api-gateway" />
         <module name="THE_VAULT" />
         <module name="auth-service" />
+        <module name="game-service" />
         <module name="eureka-server" />
         <module name="lobby-service" />
       </profile>
@@ -24,6 +25,7 @@
       <module name="api-gateway" options="-parameters" />
       <module name="auth-service" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="game-service" options="-parameters" />
       <module name="lobby-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>

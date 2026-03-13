@@ -1,3 +1,5 @@
 target/
 *.class
 .DS_Store
+# Add this line below:
+firebase-service-account.json

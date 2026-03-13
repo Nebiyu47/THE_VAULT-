@@ -19,20 +19,36 @@ import java.util.UUID;
 @AllArgsConstructor
 @Document(collection = "results")
 public class GameResult {
+
     @Id
     private String id;
+
     private UUID resultId;
+
     @Indexed
     private UUID gameId;
+
     private String roomCode;
-    private UUID winnerName;
+
+    private UUID winnerId;
+
+    private String winnerName;
+
     private int jackpotWon;
+
     private int totalMoves;
+
     private int boxesOpened;
+
     private LocalDateTime completedAt;
+
     private int gameDurationSeconds;
-    private List<PlayerResult> playerResult;
+
+    private List<PlayerResult> playerResults;
+
     private List<UUID> trapVictims;
-    private Map<String,Object>replayData;
-    private Map<String,Object>statistics;
+
+    private Map<String, Object> replayData;
+
+    private Map<String, Object> statistics;
 }
