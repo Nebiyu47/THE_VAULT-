@@ -15,7 +15,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import tools.jackson.databind.ObjectMapper;
+
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -41,7 +41,7 @@ public class GameService {
     private final RedisTemplate<String, Object> redisTemplate;
     private final SimpMessagingTemplate messagingTemplate;
     private final RabbitTemplate rabbitTemplate;
-    private final ObjectMapper objectMapper;
+
 
     private final Map<UUID, ScheduledFuture<?>> gameTimers = new ConcurrentHashMap<>();
     private final ScheduledThreadPoolExecutor scheduler = new ScheduledThreadPoolExecutor(10);
